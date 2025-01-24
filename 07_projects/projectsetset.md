@@ -1,21 +1,22 @@
-#projects related to DOM
+# Projects related to DOM
 
 ## project link
-[click here](https://stackblitz.com/edit/vitejs-vite-yy3zwzmd?file=chaiaurcode.js,index.html&terminal=dev)
+[Click here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
 
-# solution code
-## project 1 color changer
-''' javascript 
-console.log("Divyanshu")
+# Solution code
 
+## project 1
+
+```javascript
+console.log("hitesh")
 const buttons = document.querySelectorAll('.button');
 const body = document.querySelector('body');
 
-buttons.forEach(function(button){
+buttons.forEach(function (button) {
   console.log(button);
-  button.addEventListener('click', function(e){
-    console.log(e)
-    console.log(e.target)
+  button.addEventListener('click', function (e) {
+    console.log(e);
+    console.log(e.target);
     if (e.target.id === 'grey') {
       body.style.backgroundColor = e.target.id;
     }
@@ -28,14 +29,16 @@ buttons.forEach(function(button){
     if (e.target.id === 'yellow') {
       body.style.backgroundColor = e.target.id;
     }
+    
   });
 });
 
 
-'''
-## project 2 bmi generator
+```
 
-'''javascript
+## project 2 solution
+
+```javascript
 const form = document.querySelector('form');
 // this usecase will give you empty
 // const height = parseInt(document.querySelector('#height').value)
@@ -57,22 +60,30 @@ form.addEventListener('submit', function (e) {
     results.innerHTML = `<span>${bmi}</span>`;
   }
 });
-'''
-## project 3 digital clock
 
-'''javascript
-const clock = document.getElementById('clock')
+
+```
+
+## project 3 solution code
+
+```javascript
+const clock = document.getElementById('clock');
 // const clock = document.querySelector('#clock')
 
-setInterval(function(){
+setInterval(function () {
   let date = new Date();
-  // console.log(date.toLocaleDateString());
+  // console.log(date.toLocaleTimeString());
   clock.innerHTML = date.toLocaleTimeString();
-},1000);
-'''
-## project 4 guess the number
+}, 1000);
 
-''' javascript
+
+```
+
+## project 4 solution
+
+
+```javascript
+
 let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const submit = document.querySelector('#subt');
@@ -164,43 +175,14 @@ function newGame() {
     playGame = true;
   });
 }
-'''
-## project 5 generate a random color
-''' javascript
-// generate a random color
 
-const randomColor = function(){
-  const hex = '0123456789ABCDEF';
-  let color = '#';
-  for(let i = 0;i<6;i++) {
-    color += hex[Math.floor(Math.random() * 16)];
-  }
-  return color;
-};
 
-let intervalId;
-const startChangingColor = function(){
-  // let intervalId = setInterval(changeBgColor, 1000);
-  if(!intervalId){
-    intervalId = setInterval(changeBgColor, 1000);
-  }
+```
 
-  function changeBgColor(){
-    document.body.style.backgroundColor = randomColor()
-  }
-};
-const stopChangingColor = function(){
-  clearInterval(intervalId);
-  // intervalId = null;
-}
 
-document.querySelector("#start").addEventListener
-('click', startChangingColor)
-document.querySelector("#stop").addEventListener
-('click', stopChangingColor)
-'''
-## project 6  keyboard checkGuess
-''' javascript
+# Project 5 solution
+
+```javascript
 const insert = document.getElementById('insert');
 
 window.addEventListener('keydown', (e) => {
@@ -222,7 +204,42 @@ window.addEventListener('keydown', (e) => {
     </div>
   `;
 });
-'''
 
 
+```
 
+# Project 6 Solution
+
+```javascript
+//generate a random color
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let intervalId;
+const startChangingColor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000);
+  }
+
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+
+```
